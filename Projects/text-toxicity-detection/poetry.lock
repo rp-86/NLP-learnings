@@ -1,4 +1,12 @@
 [[package]]
+name = "anyascii"
+version = "0.3.1"
+description = "Unicode to ASCII transliteration"
+category = "main"
+optional = false
+python-versions = ">=3.3"
+
+[[package]]
 name = "appnope"
 version = "0.1.3"
 description = "Disable App Nap on macOS >= 10.9"
@@ -76,6 +84,17 @@ description = "Cross-platform colored terminal text."
 category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "contractions"
+version = "0.1.72"
+description = "Fixes contractions such as `you're` to you `are`"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+textsearch = ">=0.0.21"
 
 [[package]]
 name = "cycler"
@@ -503,6 +522,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "pyahocorasick"
+version = "1.4.4"
+description = "pyahocorasick is a fast and memory efficient library for exact or approximate multi-pattern string search.  With the \"ahocorasick.Automaton\" class, you can find multiple key string occurrences at once in some input text.  You can use it as a plain dict-like Trie or convert a Trie to an automaton for efficient Aho-Corasick search. And pickle to disk for easy reuse of large automatons. Implemented in C and tested on Python 3.6+. Works on Linux, macOS and Windows. BSD-3-Cause license."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pycparser"
 version = "2.21"
 description = "C parser in Python"
@@ -689,6 +716,18 @@ pure-eval = "*"
 tests = ["pytest", "typeguard", "pygments", "littleutils", "cython"]
 
 [[package]]
+name = "textsearch"
+version = "0.0.21"
+description = "Find strings/words in text; convenience and C speed"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+anyascii = "*"
+pyahocorasick = "*"
+
+[[package]]
 name = "threadpoolctl"
 version = "3.1.0"
 description = "threadpoolctl"
@@ -855,9 +894,13 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "cdaf3183b25cd72a8b7a14fe24f6fd53a8b2b5c85b0f37cc5f0087353f8b5d92"
+content-hash = "c88bf379c26ccffa796797763bb2198a1a8c23b57f9691eff9facef5f3cbfe59"
 
 [metadata.files]
+anyascii = [
+    {file = "anyascii-0.3.1-py3-none-any.whl", hash = "sha256:8707d3185017435933360462a65e2c70a4818490745804f38a5ca55e59eb56a0"},
+    {file = "anyascii-0.3.1.tar.gz", hash = "sha256:dedf57728206e286c91eed7c759505a5e45c8cd01367dd40c2f7248bb15c11f6"},
+]
 appnope = [
     {file = "appnope-0.1.3-py2.py3-none-any.whl", hash = "sha256:265a455292d0bd8a72453494fa24df5a11eb18373a60c7c0430889f22548605e"},
     {file = "appnope-0.1.3.tar.gz", hash = "sha256:02bd91c4de869fbb1e1c50aafc4098827a7a54ab2f39d9dcba6c9547ed920e24"},
@@ -951,6 +994,10 @@ click = [
 colorama = [
     {file = "colorama-0.4.5-py2.py3-none-any.whl", hash = "sha256:854bf444933e37f5824ae7bfc1e98d5bce2ebe4160d46b5edf346a89358e99da"},
     {file = "colorama-0.4.5.tar.gz", hash = "sha256:e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4"},
+]
+contractions = [
+    {file = "contractions-0.1.72-py2.py3-none-any.whl", hash = "sha256:429e9a73fe571f878761eb873e00c0f68fae8a6c9f57ece54a55d81ad7956a13"},
+    {file = "contractions-0.1.72.tar.gz", hash = "sha256:e742777abb6cd2e1bb3db553544cc6d19d3838645fb225c035f66ac0e2374077"},
 ]
 cycler = [
     {file = "cycler-0.11.0-py3-none-any.whl", hash = "sha256:3a27e95f763a428a739d2add979fa7494c912a32c17c4c38c4d5f082cad165a3"},
@@ -1295,6 +1342,44 @@ py = [
     {file = "py-1.11.0-py2.py3-none-any.whl", hash = "sha256:607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378"},
     {file = "py-1.11.0.tar.gz", hash = "sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"},
 ]
+pyahocorasick = [
+    {file = "pyahocorasick-1.4.4-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:8d46bbb579205a73adee0a8ec73667e6fb5b4b92f9d837f8a9eedb69c2f5a252"},
+    {file = "pyahocorasick-1.4.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8dfa16ea7ad3297f925964d6fb5553cb6c365b224c6dd749cf0e6cdf91fc2212"},
+    {file = "pyahocorasick-1.4.4-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:737d331377936fb229529e830d9a654623d7714e8823bfa49433ae7158f0d01c"},
+    {file = "pyahocorasick-1.4.4-cp310-cp310-musllinux_1_1_i686.whl", hash = "sha256:8fa7618f1fef1c25f4f375a4c2c7c24ba3aa300eff48c732c0035f2f9750b29b"},
+    {file = "pyahocorasick-1.4.4-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:e3cdeda23a1b2530b787440b0d22ba8f10a3e424b1c53d00ed963d68941fcbb7"},
+    {file = "pyahocorasick-1.4.4-cp310-cp310-win32.whl", hash = "sha256:0bc164eeebac0bfee721aef74843a566247fe85ea05bd30a51ede91a9786156c"},
+    {file = "pyahocorasick-1.4.4-cp310-cp310-win_amd64.whl", hash = "sha256:35d45492ebd1248f15f8e7500114a8156de63d45c9e6a675ab53b717bfb94bd2"},
+    {file = "pyahocorasick-1.4.4-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:7cf4d08e10ab7ad136654b237a0b8f1df982df2c5a6f77ef90316731797855db"},
+    {file = "pyahocorasick-1.4.4-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f842c8f37d360f34a06c31f19d1b42e6404b48b49a8dffbed2ec6089ce78cca7"},
+    {file = "pyahocorasick-1.4.4-cp36-cp36m-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:cf96ecf2ae36e9aad4693e48457a7b97dc3b4cd793275c85924850aafa5b5c38"},
+    {file = "pyahocorasick-1.4.4-cp36-cp36m-musllinux_1_1_i686.whl", hash = "sha256:50d88355ac8ef495a582615d639bb80712505d2d8cdadfb93b9123063a3ae23a"},
+    {file = "pyahocorasick-1.4.4-cp36-cp36m-musllinux_1_1_x86_64.whl", hash = "sha256:04d73bec7d1289378f5948f7f1d68b94c1b4d2a29d7e26ac9085ad403cc4e739"},
+    {file = "pyahocorasick-1.4.4-cp36-cp36m-win32.whl", hash = "sha256:e2fe9dc5114c0778234a96ba11807681ccf38fe92bdf2d70d69e701533c51cab"},
+    {file = "pyahocorasick-1.4.4-cp36-cp36m-win_amd64.whl", hash = "sha256:e6eee473787ca1dc49b4f94a62b5456251f6976141da60ea0e006507eb0f11b8"},
+    {file = "pyahocorasick-1.4.4-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:12aabdadc3354da6d846186629c80e52fe9b021bdc01e5d5718ca197441e121f"},
+    {file = "pyahocorasick-1.4.4-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f46bc7b8ec0e0cee499c5066684397ac93ed8c2ca4529d396ceda775ce05a445"},
+    {file = "pyahocorasick-1.4.4-cp37-cp37m-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:67bac0152c08d8cf40b738e011c36d8fab99f0610f5e709eb4929dd8be2a781d"},
+    {file = "pyahocorasick-1.4.4-cp37-cp37m-musllinux_1_1_i686.whl", hash = "sha256:3b20cc27c03c84f7a5d305012f302d0e7b3faa43ab02da665bb11b60135a1dd3"},
+    {file = "pyahocorasick-1.4.4-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:e3d7f2c7a0442540f373d0bf13d19d5d213136e217d050010da705afd09c3a00"},
+    {file = "pyahocorasick-1.4.4-cp37-cp37m-win32.whl", hash = "sha256:1ab503f0bff5537ef3da37681cfd52a3f964553f69eef561bd157b70b4aedf84"},
+    {file = "pyahocorasick-1.4.4-cp37-cp37m-win_amd64.whl", hash = "sha256:ab84c9425eb245c1baa2f91218c977561e01b700773ee232389222458a32316e"},
+    {file = "pyahocorasick-1.4.4-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:df422bf5c50115c58cdb972e9086d99bdd34367c56ba8827a939c8cc973f17d8"},
+    {file = "pyahocorasick-1.4.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:23cf21893b6ba3b47637f007c1e355c45726b98cd9cf473ea6dc706c47332646"},
+    {file = "pyahocorasick-1.4.4-cp38-cp38-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:bee494e54939b737e4e44a04cbdbcfdf9b62c8bd762c05d435f4a7883dae8a94"},
+    {file = "pyahocorasick-1.4.4-cp38-cp38-musllinux_1_1_i686.whl", hash = "sha256:e61994166562e8460115aa5a57fb0aafa852a173f4207a1a1381ba4322adf174"},
+    {file = "pyahocorasick-1.4.4-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:8fea989f2802eae1aacf26b817e4d532fe9f42434b49ddbff38b412bdeb763ac"},
+    {file = "pyahocorasick-1.4.4-cp38-cp38-win32.whl", hash = "sha256:31108e1cdf055acb9d0ba5e302926bf4e904db61dfbaa08c4d40284802950414"},
+    {file = "pyahocorasick-1.4.4-cp38-cp38-win_amd64.whl", hash = "sha256:4f37a464dbf4f091560a02e135f917259fde6c0a43f6cdf5558480a102bc1843"},
+    {file = "pyahocorasick-1.4.4-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:c13190af4dd382c915ca37f173a407736be4dc1912d834bbc6555a79a2e6c9e2"},
+    {file = "pyahocorasick-1.4.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9b1b7ba6d9c717bb6d7310ab8185f739ff416b8c9323d8adf7b5bbbf48e2e775"},
+    {file = "pyahocorasick-1.4.4-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:38172bfa186da136cadc7438946d0d6d4fc1d64f62cad4d1a3038c20b37d5182"},
+    {file = "pyahocorasick-1.4.4-cp39-cp39-musllinux_1_1_i686.whl", hash = "sha256:94894f5794b9e62a4c7b47a4fd3dc85bae952fe2b220396a627fae74b3eb7ad0"},
+    {file = "pyahocorasick-1.4.4-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:89085980232cc9cd2da2466a8a6232b0e1ff196ef275b2ed4e866941b35bf775"},
+    {file = "pyahocorasick-1.4.4-cp39-cp39-win32.whl", hash = "sha256:ef24ec2b11a09e0aba1f2a9c47f3c07444771a8b8def672713f79901509ed6b7"},
+    {file = "pyahocorasick-1.4.4-cp39-cp39-win_amd64.whl", hash = "sha256:062c5ac842e3fe51f231ada754acb1e5ad986cd28a2181c9a22b21268e22f8c7"},
+    {file = "pyahocorasick-1.4.4.tar.gz", hash = "sha256:32545cad135660ceef556f1d987aee3206e00096735405d7a8de84eb0a15bb27"},
+]
 pycparser = [
     {file = "pycparser-2.21-py2.py3-none-any.whl", hash = "sha256:8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9"},
     {file = "pycparser-2.21.tar.gz", hash = "sha256:e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"},
@@ -1561,6 +1646,10 @@ six = [
 stack-data = [
     {file = "stack_data-0.3.0-py3-none-any.whl", hash = "sha256:aa1d52d14d09c7a9a12bb740e6bdfffe0f5e8f4f9218d85e7c73a8c37f7ae38d"},
     {file = "stack_data-0.3.0.tar.gz", hash = "sha256:77bec1402dcd0987e9022326473fdbcc767304892a533ed8c29888dacb7dddbc"},
+]
+textsearch = [
+    {file = "textsearch-0.0.21-py2.py3-none-any.whl", hash = "sha256:4b8b946b0ed8986b651a0d6ca526c3c5bc777bcc9d83312dfad3b10635f00de9"},
+    {file = "textsearch-0.0.21.tar.gz", hash = "sha256:2d501541effd2e3698391b48596676333bb61f59c6090ce52184bcd945f2bdb0"},
 ]
 threadpoolctl = [
     {file = "threadpoolctl-3.1.0-py3-none-any.whl", hash = "sha256:8b99adda265feb6773280df41eece7b2e6561b772d21ffd52e372f999024907b"},

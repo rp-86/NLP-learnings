@@ -14,6 +14,7 @@ transformers = "^4.20.1"
 seaborn = "^0.11.2"
 ipykernel = "^6.15.1"
 nltk = "^3.7"
+contractions = "^0.1.72"
 
 [tool.poetry.dev-dependencies]
 
